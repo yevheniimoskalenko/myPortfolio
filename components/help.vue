@@ -1,5 +1,5 @@
 <template>
-  <div class="help">
+  <div class="help" id="contact">
     <h2>Looking for help with design</h2>
     <span>Send me details</span>
     <el-form>

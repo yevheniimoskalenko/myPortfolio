@@ -12,7 +12,7 @@
         MobileUpp. I love working on side projects, trying to improve myself on
         SwiftUI and Webflow.
       </p>
-      <nuxt-link to="/">Contact Me</nuxt-link>
+      <nuxt-link to="#contact">Contact Me</nuxt-link>
     </div>
   </div>
 </template>
