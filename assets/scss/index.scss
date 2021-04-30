@@ -89,7 +89,7 @@ html {
 }
 
 body {
-  background: #e5e5e54f;
+  background: #ffff;
   font-size: 16px;
   font-weight: 300;
   line-height: 26px;
@@ -110,13 +110,24 @@ p {
   font-weight: 300;
 }
 
-a {
+a,
+.link {
   color: #444444;
   font-weight: 500;
   line-height: 20px;
+  border: none;
+  background: none;
   &:hover {
     text-decoration: none;
+    cursor: pointer;
   }
+}
+.link {
+  text-decoration: underline;
+}
+.isDisable {
+  color: #999999;
+  cursor: no-drop;
 }
 .mr-1 {
   margin-top: 23px;

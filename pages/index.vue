@@ -5,6 +5,7 @@
       <app-portfolio />
       <app-works />
       <app-experience />
+      <app-help />
     </el-col>
   </el-row>
 </template>
@@ -14,6 +15,7 @@ import appOverview from '@/components/overview'
 import appPortfolio from '@/components/portfolio'
 import appWorks from '@/components/works'
 import appExperience from '@/components/experience'
+import appHelp from '@/components/help'
 export default {
   head: {
     title: 'Portfolio',
@@ -23,6 +25,7 @@ export default {
     appPortfolio,
     appWorks,
     appExperience,
+    appHelp,
   },
 }
 </script>

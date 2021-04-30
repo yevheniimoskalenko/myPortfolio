@@ -23,7 +23,7 @@
             working at Enrich mobile. With Simple scanner, you can scan your
             documents and convert them to PDF
           </p>
-          <nuxt-link to="/">See All</nuxt-link>
+          <nuxt-link to="/" class="isDisable">Coming Soon</nuxt-link>
         </div></el-col
       >
       <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8"
