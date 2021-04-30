@@ -4,6 +4,7 @@
       <app-overview />
       <app-portfolio />
       <app-works />
+      <app-experience />
     </el-col>
   </el-row>
 </template>
@@ -12,6 +13,7 @@
 import appOverview from '@/components/overview'
 import appPortfolio from '@/components/portfolio'
 import appWorks from '@/components/works'
+import appExperience from '@/components/experience'
 export default {
   head: {
     title: 'Portfolio',
@@ -20,6 +22,7 @@ export default {
     appOverview,
     appPortfolio,
     appWorks,
+    appExperience,
   },
 }
 </script>
