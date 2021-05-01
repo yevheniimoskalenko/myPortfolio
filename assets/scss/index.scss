@@ -136,3 +136,8 @@ a.isDisable {
 .mr-2 {
   margin-top: 48px;
 }
+@media (max-width: 576px) {
+  .none {
+    margin-top: 0px;
+  }
+}
