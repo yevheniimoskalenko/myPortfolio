@@ -2,7 +2,7 @@
   <el-row type="flex" justify="center">
     <el-col :xs="24" :sm="20" :md="18" :lg="18" :xl="18">
       <app-overview />
-      <app-portfolio />
+      <app-portfolio :show-link="true" />
       <app-works />
       <app-experience />
       <app-help />
