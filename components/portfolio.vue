@@ -10,7 +10,7 @@
             The main goal of businesswise is to gather podcasts in various
             categories for professional people.
           </p>
-          <nuxt-link to="/">See All</nuxt-link>
+          <nuxt-link v-show="showLink" to="/">See All</nuxt-link>
         </div>
       </el-col>
 
@@ -23,7 +23,9 @@
             working at Enrich mobile. With Simple scanner, you can scan your
             documents and convert them to PDF
           </p>
-          <nuxt-link to="/" class="isDisable">Coming Soon</nuxt-link>
+          <nuxt-link v-show="showLink" to="/" class="isDisable"
+            >Coming Soon</nuxt-link
+          >
         </div></el-col
       >
       <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8"
@@ -35,7 +37,7 @@
             Apple Music competitors. The biggest advantage compared to its
             competitors is that it provides higher sound quality.
           </p>
-          <nuxt-link to="/">See All</nuxt-link>
+          <nuxt-link v-show="showLink" to="/">See All</nuxt-link>
         </div>
       </el-col>
     </el-row>
@@ -43,7 +45,14 @@
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    showLink: {
+      type: Boolean,
+      default: () => true,
+    },
+  },
+}
 </script>
 <style lang="scss" scoped>
 .portfolio {
