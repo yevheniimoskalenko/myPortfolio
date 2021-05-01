@@ -19,9 +19,6 @@ import appExperience from '@/components/experience'
 import appHelp from '@/components/help'
 import appFooter from '@/components/footer'
 export default {
-  head: {
-    title: 'Portfolio',
-  },
   components: {
     appOverview,
     appPortfolio,
@@ -29,6 +26,9 @@ export default {
     appExperience,
     appHelp,
     appFooter,
+  },
+  head: {
+    title: 'Portfolio',
   },
 }
 </script>

@@ -1,7 +1,7 @@
 <template>
   <div class="study">
     <div class="page-header">
-      <el-page-header @back="goBack" content="to home"> </el-page-header>
+      <el-page-header content="to home" @back="goBack"> </el-page-header>
     </div>
   </div>
 </template>

@@ -39,6 +39,22 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    [
+      '@nuxtjs/firebase',
+      {
+        config: {
+          apiKey: 'AIzaSyBoA8ECjHaj8wZxiLFt_DxJdL2rv1eB6X0',
+          authDomain: 'portfilio-4f019.firebaseapp.com',
+          projectId: 'portfilio-4f019',
+          storageBucket: 'portfilio-4f019.appspot.com',
+          messagingSenderId: '803698262342',
+          appId: '1:803698262342:web:6c22e0afa6748c6368e547',
+        },
+        services: {
+          auth: true,
+        },
+      },
+    ],
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios

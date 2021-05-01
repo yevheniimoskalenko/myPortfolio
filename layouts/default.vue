@@ -5,5 +5,3 @@
     </el-main>
   </el-container>
 </template>
-
-<style></style>
