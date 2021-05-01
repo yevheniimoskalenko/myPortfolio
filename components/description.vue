@@ -24,12 +24,34 @@ export default {}
   p {
     margin-top: 8px;
     line-height: 26px;
+    text-align: justify;
   }
   .brand {
     margin-top: 45px;
     img {
       border-radius: 6px;
     }
+  }
+}
+
+@media (max-width: 576px) {
+  .description {
+    width: 100%;
+  }
+}
+@media (min-width: 576px) {
+  .description {
+    width: 70%;
+  }
+}
+@media (min-width: 768px) {
+  .description {
+    width: 70%;
+  }
+}
+@media (min-width: 992px) {
+  .description {
+    width: 60%;
   }
 }
 </style>
