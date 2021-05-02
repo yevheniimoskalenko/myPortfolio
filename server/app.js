@@ -1,7 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 require('dotenv').config();
-const generatorPay = require('./routers/pay.routes');
+const login = require('./routers/login.routes');
+
 const app = express();
 
 mongoose
@@ -9,10 +10,10 @@ mongoose
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
-  .then(() => console.log(`connect has started...`));
+  .then(() => console.log('connect has started...'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use('/api', generatorPay);
+app.use('/api', login);
 
 module.exports = app;
