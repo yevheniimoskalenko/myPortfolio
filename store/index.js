@@ -19,6 +19,9 @@ export const mutations = {
   isAuthenticated(state, payload) {
     state.isAuthenticated = payload;
   },
+  logout(state, payload) {
+    state.token = payload;
+  },
 };
 export const actions = {
   async auth({ commit }, payload) {
@@ -33,6 +36,29 @@ export const actions = {
     } catch (e) {
       commit('setError', e.response.data);
       throw e;
+    }
+  },
+  exit({ commit }) {
+    try {
+      commit('logout', false);
+      commit('isAuthenticated', false);
+      localStorage.removeItem('token');
+    } catch (e) {
+      console.log(e);
+    }
+  },
+  async uploadDescription({ commit }, payload) {
+    try {
+      // this.$axios.$post('http://localhost:3000/api/login');
+    } catch (e) {
+      commit('setError', e.response.data);
+    }
+  },
+  exerience({ commit }, payload) {
+    try {
+      this.$axios.$post('http://localhost:3000/api/experience', payload);
+    } catch (e) {
+      commit('setError', e.response.data);
     }
   },
 };

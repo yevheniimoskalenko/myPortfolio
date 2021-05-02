@@ -27,27 +27,28 @@ export default {
         email: [{ required: true }],
         password: [{ required: true }],
       },
-    }
+    };
   },
   head() {
     return {
       title: 'Auth',
-    }
+    };
   },
   methods: {
     login() {
-      this.$refs.form.validate((valid) => {
+      this.$refs.form.validate(async (valid) => {
         if (valid) {
           const formData = {
             email: this.form.email,
             password: this.form.password,
-          }
-          this.$store.dispatch('auth', formData)
+          };
+          await this.$store.dispatch('auth', formData);
+          await this.$router.push('/admin/panel');
         }
-      })
+      });
     },
   },
-}
+};
 </script>
 <style lang="scss" scoped>
 .auth {

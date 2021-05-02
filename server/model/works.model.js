@@ -13,6 +13,10 @@ const works = new mongoose.Schema({
     type: String,
     required: true,
   },
+  more_image: {
+    type: Array,
+    required: false,
+  },
 });
 
 module.exports = mongoose.model('works', works);

@@ -10,7 +10,7 @@ const experience = new mongoose.Schema({
     required: true,
   },
   date: {
-    type: String,
+    type: Array,
     required: true,
   },
 });
