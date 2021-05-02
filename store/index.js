@@ -2,10 +2,12 @@ export const state = () => ({
   error: null,
   user: null,
   token: null,
+  isAuthenticated: false,
 });
 export const getters = {
   getError: (state) => state.error,
   getToken: (state) => state.token,
+  isAuthenticated: (state) => state.isAuthenticated,
 };
 export const mutations = {
   setError(state, payload) {
@@ -13,6 +15,9 @@ export const mutations = {
   },
   setToken(state, payload) {
     state.token = payload;
+  },
+  isAuthenticated(state, payload) {
+    state.isAuthenticated = payload;
   },
 };
 export const actions = {
@@ -22,8 +27,9 @@ export const actions = {
         'http://localhost:3000/api/login',
         payload
       );
-      commit('setToken', data.payload);
       await localStorage.setItem('token', data.payload);
+      commit('setToken', data.payload);
+      commit('isAuthenticated', true);
     } catch (e) {
       commit('setError', e.response.data);
       throw e;
