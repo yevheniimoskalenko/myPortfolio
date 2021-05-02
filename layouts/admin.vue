@@ -5,7 +5,21 @@
 </template>
 
 <script>
-export default {}
+export default {
+  computed: {
+    error() {
+      return this.$store.getters.getError
+    },
+  },
+  watch: {
+    error(value) {
+      this.$message({
+        type: value.status,
+        message: value.message,
+      })
+    },
+  },
+}
 </script>
 
 <style lang="scss" scoped>

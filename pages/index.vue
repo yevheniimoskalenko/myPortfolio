@@ -10,7 +10,6 @@
     </el-col>
   </el-row>
 </template>
-
 <script>
 import appOverview from '@/components/overview'
 import appPortfolio from '@/components/portfolio'

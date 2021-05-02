@@ -1,18 +1,16 @@
 module.exports = {
-  root: true,
   env: {
     browser: true,
+    es2021: true,
     node: true,
   },
+  extends: ['plugin:vue/essential', 'airbnb-base'],
   parserOptions: {
-    parser: 'babel-eslint',
+    ecmaVersion: 12,
+    sourceType: 'module',
   },
-  extends: [
-    '@nuxtjs',
-    'plugin:prettier/recommended',
-    'plugin:nuxt/recommended',
-  ],
-  plugins: [],
-  // add your custom rules here
-  rules: {},
-}
+  plugins: ['vue'],
+  rules: {
+    'comma-dangle': 'off',
+  },
+};

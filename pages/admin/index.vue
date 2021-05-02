@@ -5,10 +5,10 @@
         <el-input v-model="form.email" />
       </el-form-item>
       <el-form-item label="Password" prop="password">
-        <el-input v-model="form.password" />
+        <el-input v-model="form.password" type="password" />
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" round>Login</el-button>
+        <el-button type="primary" round @click="login">Login</el-button>
       </el-form-item>
     </el-form>
   </div>
@@ -20,8 +20,8 @@ export default {
   data() {
     return {
       form: {
-        email: '',
-        password: '',
+        email: 'testjokerqwerty@gmail.com',
+        password: 'was123456789was',
       },
       rules: {
         email: [{ required: true }],
@@ -34,6 +34,19 @@ export default {
       title: 'Auth',
     }
   },
+  methods: {
+    login() {
+      this.$refs.form.validate((valid) => {
+        if (valid) {
+          const formData = {
+            email: this.form.email,
+            password: this.form.password,
+          }
+          this.$store.dispatch('auth', formData)
+        }
+      })
+    },
+  },
 }
 </script>
 <style lang="scss" scoped>
@@ -45,7 +58,7 @@ export default {
   align-items: center;
 }
 .form {
-  width: 500px;
+  width: 30%;
   background: #f9f9f9;
   padding: 20px;
 }
