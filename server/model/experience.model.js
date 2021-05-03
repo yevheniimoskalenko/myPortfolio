@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const experience = new mongoose.Schema({
-  title: {
+  company: {
     type: String,
     required: true,
   },

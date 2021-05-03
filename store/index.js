@@ -49,17 +49,14 @@ export const actions = {
   },
   async uploadDescription({ commit }, payload) {
     try {
-      const fd = new FormData();
-      fd.append('about', payload.description);
-      fd.append('avatar', payload.image);
-      // this.$axios.$post('http://localhost:3000/api/login');
+      this.$axios.$post('http://localhost:3000/api/upload', payload);
     } catch (e) {
       commit('setError', e.response.data);
     }
   },
   async aboutMe({ commit }, payload) {
     try {
-      await this.$axios.$post('http://localhost:3000/api/experience', payload);
+      await this.$axios.$post('http://localhost:3000/api/aboutMe', payload);
     } catch (e) {
       commit('setError', e.response.data);
     }
@@ -87,7 +84,7 @@ export const actions = {
     try {
       const fd = new FormData();
       fd.append('list', payload.list);
-      await this.$axios.$post('http://localhost:3000/api/concept');
+      await this.$axios.$post('http://localhost:3000/api/concept', fd);
     } catch (e) {
       commit('setError', e.response.data);
     }
