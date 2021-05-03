@@ -9,9 +9,8 @@
         class="upload-demo"
         drag
         action="https://jsonplaceholder.typicode.com/posts/"
-        :on-preview="handlePreview"
-        :on-remove="handleRemove"
-        :file-list="form.fileList"
+        :on-change="hendelPreviewImageChange"
+        :auto-upload="false"
         multiple
       >
         <i class="el-icon-upload"></i>
@@ -28,26 +27,20 @@
         ref="upload"
         action="https://jsonplaceholder.typicode.com/posts/"
         :auto-upload="false"
+        :on-change="hendelImagesChange"
       >
         <el-button slot="trigger" size="small" type="primary"
           >Вибрати картинки</el-button
-        >
-        <el-button
-          style="margin-left: 10px"
-          size="small"
-          type="success"
-          @click="submitUpload"
-          >Завантажити на сервер</el-button
         >
         <div class="el-upload__tip" slot="tip">
           jpg/png files with a size less than 500kb
         </div>
       </el-upload>
       <el-form-item>
-        <el-button type="primary" round @click="login">Додати роботу</el-button>
+        <el-button type="primary" round @click="create"
+          >Додати роботу</el-button
+        >
       </el-form-item>
-
-      {{ form.fileList }}
     </el-form>
   </div>
 </template>
@@ -62,26 +55,40 @@ export default {
   data() {
     return {
       form: {
-        fileList: [],
+        preview: null,
+        images: [],
+        title: '',
+        description: '',
+      },
+      rules: {
+        title: [{ required: true }],
+        description: [{ required: true }],
       },
     };
   },
   methods: {
-    handleRemove(file, fileList) {
-      console.log(file, fileList);
-    },
-    handlePreview(file) {
+    hendelPreviewImageChange(file) {
       console.log(file);
+      this.form.preview = file.raw;
     },
-    handleExceed(files, fileList) {
-      this.$message.warning(
-        `The limit is 3, you selected ${
-          files.length
-        } files this time, add up to ${files.length + fileList.length} totally`
+    hendelImagesChange(file, fileList) {
+      this.form.images = fileList.reduce(
+        (acc, item) => acc.concat(item.raw),
+        []
       );
     },
-    beforeRemove(file, fileList) {
-      return this.$confirm(`Cancel the transfert of ${file.name} ?`);
+    create() {
+      this.$refs.form.validate((valid) => {
+        if (valid) {
+          const dataForm = {
+            preview: this.form.preview,
+            images: this.form.images,
+            title: this.form.title,
+            description: this.form.description,
+          };
+          this.$store.dispatch('works', dataForm);
+        }
+      });
     },
   },
 };

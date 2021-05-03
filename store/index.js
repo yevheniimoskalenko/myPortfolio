@@ -49,14 +49,45 @@ export const actions = {
   },
   async uploadDescription({ commit }, payload) {
     try {
+      const fd = new FormData();
+      fd.append('about', payload.description);
+      fd.append('avatar', payload.image);
       // this.$axios.$post('http://localhost:3000/api/login');
     } catch (e) {
       commit('setError', e.response.data);
     }
   },
-  exerience({ commit }, payload) {
+  async aboutMe({ commit }, payload) {
     try {
-      this.$axios.$post('http://localhost:3000/api/experience', payload);
+      await this.$axios.$post('http://localhost:3000/api/experience', payload);
+    } catch (e) {
+      commit('setError', e.response.data);
+    }
+  },
+  async exerience({ commit }, payload) {
+    try {
+      await this.$axios.$post('http://localhost:3000/api/experience', payload);
+    } catch (e) {
+      commit('setError', e.response.data);
+    }
+  },
+  async works({ commit }, payload) {
+    try {
+      const fd = new FormData();
+      fd.append('preview', payload.preview);
+      fd.append('images', payload.images);
+      fd.append('title', payload.title);
+      fd.append('description', payload.description);
+      await this.$axios.$post('http://localhost:3000/api/works', fd);
+    } catch (e) {
+      commit('setError', e.response.data);
+    }
+  },
+  async concept({ commit }, payload) {
+    try {
+      const fd = new FormData();
+      fd.append('list', payload.list);
+      await this.$axios.$post('http://localhost:3000/api/concept');
     } catch (e) {
       commit('setError', e.response.data);
     }

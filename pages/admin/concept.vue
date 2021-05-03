@@ -6,9 +6,8 @@
         class="upload-demo"
         drag
         action="https://jsonplaceholder.typicode.com/posts/"
-        :on-preview="handlePreview"
-        :on-remove="handleRemove"
-        :file-list="fileList"
+        :on-change="hendelImageChange"
+        :auto-upload="false"
         multiple
       >
         <i class="el-icon-upload"></i>
@@ -18,7 +17,9 @@
         </div>
       </el-upload>
       <el-form-item>
-        <el-button type="primary" round @click="login">Додати роботу</el-button>
+        <el-button type="primary" round @click="addConcept"
+          >Додати роботу</el-button
+        >
       </el-form-item>
     </el-form>
   </div>
@@ -30,6 +31,33 @@ export default {
   layout: 'empty',
   head: {
     title: 'Концепт роботи',
+  },
+  data() {
+    return {
+      form: {
+        list: [],
+      },
+      rules: {},
+    };
+  },
+  methods: {
+    hendelImageChange(file, fileList) {
+      this.form.list = fileList.reduce((acc, item) => acc.concat(item.raw), []);
+    },
+    addConcept() {
+      this.$refs.form.validate(async (valid) => {
+        if (valid) {
+          try {
+            const formData = {
+              list: this.form.list,
+            };
+            await this.$store.dispatch('concept', formData);
+          } catch (e) {
+            console.log(e);
+          }
+        }
+      });
+    },
   },
 };
 </script>

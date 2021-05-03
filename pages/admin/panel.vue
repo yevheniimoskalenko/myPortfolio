@@ -9,9 +9,8 @@
         class="upload-demo"
         drag
         action="https://jsonplaceholder.typicode.com/posts/"
-        :on-preview="handlePreview"
-        :on-remove="handleRemove"
-        :file-list="fileList"
+        :on-change="hendelPreviewImageChange"
+        :auto-upload="false"
         multiple
       >
         <i class="el-icon-upload"></i>
@@ -37,11 +36,10 @@ export default {
     return {
       form: {
         aboutMe: '',
-        imageUrl: null,
+        image: null,
       },
       rules: {
         aboutMe: [{ required: true }],
-        imageUrl: [{ required: true }],
       },
     };
   },
@@ -49,30 +47,18 @@ export default {
     title: 'Про себе',
   },
   methods: {
-    handleAvatarSuccess(res, file) {
-      this.form.imageUrl = URL.createObjectURL(file.raw);
-    },
-    beforeAvatarUpload(file) {
-      const isJPG = file.type === 'image/jpeg';
-      const isLt2M = file.size / 1024 / 1024 < 2;
-
-      if (!isJPG) {
-        this.$message.error('Avatar picture must be JPG format!');
-      }
-      if (!isLt2M) {
-        this.$message.error('Avatar picture size can not exceed 2MB!');
-      }
-      return isJPG && isLt2M;
+    hendelPreviewImageChange(file) {
+      this.form.image = file.raw;
     },
     uploadPortfolio() {
       this.$refs.form.validate((valid) => {
-        if (valid) {
+        if (valid && this.form.image) {
           try {
-            const formDate = {
+            const formData = {
               description: this.form.aboutMe,
-              text: this.form.imageUrl,
+              image: this.form.image,
             };
-            this.$store.dispatch('uploadDescription', formDate);
+            this.$store.dispatch('uploadDescription', formData);
           } catch (e) {
             console.log(e);
           }
