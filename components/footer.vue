@@ -9,16 +9,26 @@
       <el-col :xs="24" :sm="12" :md="12" :lg="12" :xl="12">
         <ul class="footer-list">
           <li class="footer-item">
-            <a href="#" target="_blank">Dribbble</a>
+            <a
+              href="https://www.linkedin.com/in/yevhenii-moskalenko/"
+              target="_blank"
+              >Linkedin</a
+            >
           </li>
           <li class="footer-item">
-            <a href="#" target="_blank">Linkedin</a>
+            <a href="https://twitter.com/jekanok01" target="_blank">Twitter</a>
           </li>
           <li class="footer-item">
-            <a href="#" target="_blank">Twitter</a>
+            <a
+              href="https://www.instagram.com/yevhenii.moskalenko/"
+              target="_blank"
+              >Instagram</a
+            >
           </li>
           <li class="footer-item">
-            <a href="#" target="_blank">Instagram</a>
+            <a href="https://telegram.im/@testjokerqwerty" target="_blank"
+              >Telegram</a
+            >
           </li>
         </ul>
       </el-col>

@@ -83,8 +83,22 @@ export const actions = {
   async concept({ commit }, payload) {
     try {
       const fd = new FormData();
-      fd.append('list', payload.list);
-      await this.$axios.$post('http://localhost:3000/api/concept', fd);
+
+      fd.append('image', payload.list[0], payload.list[0].name);
+      await this.$axios
+        .$post('http://localhost:3000/api/concept', payload, {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        })
+        .then((response) => console.log(response));
+    } catch (e) {
+      commit('setError', e.response.data);
+    }
+  },
+  async email({ commit }, payload) {
+    try {
+      await this.$axios.$post('/api/email', payload);
     } catch (e) {
       commit('setError', e.response.data);
     }

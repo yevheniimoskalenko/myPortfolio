@@ -53,6 +53,7 @@ module.exports = {
   devModules: [],
   axios: {
     // proxy: true
+    baseURL: process.env.BASE_URL || 'http://localhost:3000',
   },
   /*
    ** Nuxt.js modules

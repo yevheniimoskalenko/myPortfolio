@@ -1,16 +1,17 @@
 <template>
   <div class="overview">
     <div class="avatar">
-      <img src="~/assets/image/hero.png" alt="" />
+      <img
+        src="https://res.cloudinary.com/dmrpkseez/image/upload/v1598355171/image_ahstla.png"
+        alt=""
+      />
     </div>
     <div class="about">
       <h2>Welcome to my Portfolio 👋</h2>
       <p>
-        I’m Mete. I’m 24-year-old. I’m a Digital Product Designer who
-        prioritizes simplicity and usability. Currently, I'm Digital Product
-        Designer on Norma. Formerly Enrich Mobile, ASDC, TalentMondo, and
-        MobileUpp. I love working on side projects, trying to improve myself on
-        SwiftUI and Webflow.
+        I'm a professional web developer with 3+years volunteer experience in
+        web developer. I'm constantly developing and learning new technologies
+        in IT.
       </p>
       <nuxt-link to="#contact">Contact Me</nuxt-link>
     </div>
@@ -20,6 +21,11 @@
 <style lang="scss" scoped>
 .overview {
   margin-top: 67px;
+}
+.avatar {
+  img {
+    border-radius: 50%;
+  }
 }
 .about {
   h2 {

@@ -48,10 +48,11 @@ export default {
       this.$refs.form.validate(async (valid) => {
         if (valid) {
           try {
-            const formData = {
+            const formdata = {
               list: this.form.list,
             };
-            await this.$store.dispatch('concept', formData);
+            // formdata.append('list', this.form.list);
+            await this.$store.dispatch('concept', formdata);
           } catch (e) {
             console.log(e);
           }

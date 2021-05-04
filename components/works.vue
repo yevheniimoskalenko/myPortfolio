@@ -4,32 +4,34 @@
     <el-row :gutter="30">
       <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8">
         <div class="card">
-          <img src="~/assets/image/4.png" alt="" />
+          <img
+            src="https://raw.githubusercontent.com/yevheniimoskalenko/reCAPTCHA/master/assets/recaptcha.png"
+            alt=""
+          />
         </div>
       </el-col>
       <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8">
         <div class="card">
-          <img src="~/assets/image/5.png" alt="" />
+          <img
+            src="https://res.cloudinary.com/dmrpkseez/image/upload/v1598702063/2_dfu1gr.jpg"
+            alt=""
+          />
         </div>
       </el-col>
       <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8">
         <div class="card">
-          <img src="~/assets/image/6.png" alt="" />
+          <img
+            src="https://res.cloudinary.com/dmrpkseez/image/upload/v1598702062/3_wuymyz.png"
+            alt=""
+          />
         </div>
       </el-col>
       <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8">
         <div class="card">
-          <img src="~/assets/image/7.png" alt="" />
-        </div>
-      </el-col>
-      <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8">
-        <div class="card">
-          <img src="~/assets/image/8.png" alt="" />
-        </div>
-      </el-col>
-      <el-col :xs="24" :sm="8" :md="8" :lg="8" :xl="8">
-        <div class="card">
-          <img src="~/assets/image/9.png" alt="" />
+          <img
+            src="https://raw.githubusercontent.com/yevheniimoskalenko/medi-designer/master/src/assets/prev.png"
+            alt=""
+          />
         </div>
       </el-col>
     </el-row>
@@ -44,6 +46,7 @@
   margin-top: 24px;
   img {
     width: 100%;
+    height: 304px;
   }
 }
 </style>
